@@ -1,6 +1,5 @@
 .box{
 	width: 100%;
-	
 	margin-left: 10%; 
 	white-space: nowrap;
 }
@@ -38,15 +37,18 @@ input:focus {
     margin-bottom: 10px;
 }
 
-#tag {
+#tag { 
+	text-align: center; 
+	color: #ffffff;
     border-radius: 25px;
     background: #73AD21;
     padding: 20px; 
-    width: 200px;
-    height: 150px; 
+    width: 150px;
+    height: 75px; 
     margin: 2.5%; 
     display: inline-block;
 }
+
 
 /* Navigation buttons */
 
@@ -87,3 +89,9 @@ input:focus {
  	background-color: #ffffff; 
  	border: 0; 
  }
+
+li {
+    display: inline;
+    float: right;
+    
+}
