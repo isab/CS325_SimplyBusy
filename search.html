@@ -9,12 +9,15 @@
 
 	<body>
 		<div class="nav">
-			<h1>ADD Caledar</h1>
-			<button id="button-add"></button>
-			<button id="button-settings"></button>
+			<h1>ADD CALENDAR</h1>
+			<!-- Add in the name of the "ADD" page into the href.-->
+			<button id="button-add"><a href="#"></a></button>
+			<!-- Add in the name of The "SETTINGS" page into the href.-->
+			<button id="button-settings"><a href="#"></a></button>
 		</div>
 		<div class="box">
 		  	 <input type="search" id="search" placeholder="Search"/>
+		  	 <span><a href=""><img src="magGlass.png"></img></a></span>
 		</div>
 		<div class="customHr">.</div>
 
@@ -26,17 +29,14 @@
 		</div>
 
 		<nav class="navbar navbar-inverse navbar-fixed-bottom">
-			  <div class="container-fluid">
-			    <div>
-			    	<div id="#homeButton"></div>
-				      <ul class="nav navbar-nav">
-				        <li><a href="#">Home</a></li>
-				        <li><a href="#">List</a></li>
-				        <li><a href="#">Tags</a></li> 
-				        <li><a href="#">Month</a></li> 
-				      </ul>
-			    </div>
-			  </div>
+			<div class="row">
+				 <div class=".col-md-3"><a href="#"><img id="nav_button" src="day_green.gif"></a></div>
+				 <div class=".col-md-3"><a href="#"><img id="nav_button" src="list_green.gif"></a></div>
+				 <!-- Add in the name of your page into the href like below. This will link button to your page.-->
+				 <div class=".col-md-3"><a href="search.html"><img id="nav_button" src="tags_green.gif"></a></div>
+				 <div class=".col-md-3"><a href="#"><img id="nav_button" src="months_green.gif"></a></div>
+			</div>
+			 
 		</nav>
 
 

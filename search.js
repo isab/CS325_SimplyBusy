@@ -1,0 +1,3 @@
+function listFilter(header, list) {
+  …
+}
