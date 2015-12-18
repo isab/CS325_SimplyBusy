@@ -1,0 +1,89 @@
+.box{
+	width: 100%;
+	
+	margin-left: 10%; 
+	white-space: nowrap;
+}
+
+.nav {
+	margin-left: 5%; 
+	margin-right: 5%;
+	margin-top: 0;
+	text-align:center;
+}
+
+h1 {
+	margin-top: 0; 
+}
+#search {
+    width:80%;
+    margin-left: 0;   
+}
+
+input {
+	border: 0px solid #000000; 
+}
+
+input:focus {
+    outline:none;
+}
+
+.customHr {
+    width: 95%
+    font-size: 1px;
+    color: rgba(0, 0, 0, 0);
+    line-height: 2px;
+    background-color: #000000;
+    margin-top: 1%;
+    margin-bottom: 10px;
+}
+
+#tag {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+    margin: 2.5%; 
+    display: inline-block;
+}
+
+/* Navigation buttons */
+
+ #button-add {
+ 	 background-image: url('add202.png');
+ 	 background-color: #ffffff; 
+     line-height: 12px;
+     width: 32px;
+     height: 32px;
+     font-size: 8pt;
+     margin-top: 1px;
+     margin-right: 3px;
+     margin-left: 1%;
+     border: 0;
+     position:absolute;
+     top:0;
+     right:0;
+ }
+
+ #button-settings {
+ 	 background-image: url('gear39.png');
+ 	 background-color: #ffffff; 
+ 	 line-height: 12px;
+     width: 32px;
+     height: 32px;
+     font-size: 8pt;
+     margin-top: 1px;
+     margin-left: 2px;
+     margin-right: 1%;
+     border: 0;
+     position:absolute;
+     top:0;
+     left:0;
+ }
+
+/* Botton Navigation styling */
+ .container-fluid {
+ 	background-color: #ffffff; 
+ 	border: 0; 
+ }
