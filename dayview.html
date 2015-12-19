@@ -1,0 +1,167 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="dayviewStyle.css">
+</head>
+<!DOCTYPE html>
+<html>
+
+<body bgcolor="#F7F0ED">
+
+		<div class="nav">
+			<!-- Add in the name of the "ADD" page into the href.-->
+			<button id="button-add"><a href="#"></a></button>
+			<!-- Add in the name of The "SETTINGS" page into the href.-->
+			<button id="button-settings"><a href="#"></a></button>
+		</div>
+
+<div class="center">
+<p id ="month" style="color:#685F61;text-align:center;font-size:18px">December 2015</p>
+<table style="margin:auto;width:60%;color:#6ABD44;font-size:12px">
+  <tr>
+    <td>S</td><td>M</td><td>T</td><td>W</td><td>T</td><td>F</td><td>S</td>
+  </tr>
+  <tr>
+    <td id ="Sunday">13</td>
+    <td id ="Monday">14</td>		
+    <td id ="Tuesday">15</td>
+    <td id ="Wednesday">16</td>
+    <td id ="Thursday">17</td>
+    <td id ="Friday">18</td>
+    <td id ="Saturday">19</td>
+  </tr>
+</table>
+</div>
+
+<div class="canvas">
+<!-- <canvas id="canvas_base" width="300" height="300" -->
+<!-- style="background-color:#333;z-index=1;position=absolute;top=0;left=0;"> -->
+<!-- </canvas> -->
+<canvas id="canvas" width="300" height="300" 
+	style="background-color:#0;z-index=0;position=absolute;top=0;left=0;">
+</canvas>
+</div>
+
+<div class="center">
+<p id ="month" style="color:#685F61;text-align:center;font-size:18px">Activities:</p>
+</div>
+
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="row">
+				 <div class="col-xs-3"><a href="#"><img id="nav_button" src="day_green.gif"></a></div>
+				 <div class="col-xs-3"><a href="#"><img id="nav_button" src="list_green.gif"></a></div>
+				 <!-- Add in the name of your page into the href like below. This will link button to your page.-->
+				 <div class="col-xs-3"><a href="search.html"><img id="nav_button" src="tags_green.gif"></a></div>
+				 <div class="col-xs-3"><a href="#"><img id="nav_button" src="months_green.gif"></a></div>
+			</div>
+		</nav>
+
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var ctx_base = document.getElementById("canvas_base");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClockFace(){
+  drawFace(ctx_base, radius, '#76CDD6', '#F7F0ED');
+  drawFace(ctx_base, radius*0.3, '#F0EB60', '#76CDD6');
+}
+function drawClockTime(){
+  drawNumbers(ctx, radius, '#F7F0ED');
+  drawTime(ctx, radius, '#F7F0ED');
+}
+function drawClock() {
+  drawFace(ctx, radius, '#76CDD6', '#F7F0ED');
+  drawFace(ctx, radius*0.3, '#F0EB60', '#76CDD6');
+  <!--partition(0,6,ctx,Math.PI/180,radius,radius*0.02,'#ff9933');-->
+  <!--partition(6,9,ctx,Math.PI/180,radius,radius*0.02,'#ea67f2');-->
+  drawNumbers(ctx, radius, '#F7F0ED');
+  drawTime(ctx, radius, '#F7F0ED');
+}
+
+function drawFace(ctx, radius, color, border) {
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.strokeStyle = border;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+}
+
+function drawNumbers(ctx, radius, color) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillStyle = color;
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius, color){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07, color);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07, color);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02, color);
+}
+
+function drawHand(ctx, pos, length, width, color) {
+    ctx.strokeStyle=color;
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+<!-- Partitions the clock. -->
+function partition(start, end, ctx, pos, length, width, color) {
+    ctx.strokeStyle=(color);
+    ctx.rotate(pos*start*30);
+    var time = end - start;
+    for(i = 0; i < time * 30; i ++){
+        ctx.beginPath();
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.moveTo(0,0);
+        ctx.rotate(pos);
+        ctx.lineTo(0, -length*0.94);
+        ctx.stroke();
+        ctx.closePath();
+    }
+    ctx.strokeStyle=('#333');
+    ctx.rotate(-pos*time*30);
+    ctx.rotate(pos*start*30);
+}
+</script>
+
+</body>
+</html>
