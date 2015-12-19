@@ -6,42 +6,83 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="syncStyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="sync.js"></script>
+
+		<link href="bootstrap-switch-master/docs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-switch-master/docs/css/highlight.css" rel="stylesheet">
+    <link href="bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/assets/css/docs.min.css" rel="stylesheet">
+    <link href="bootstrap-switch-master/docs/css/main.css" rel="stylesheet">
 	</head>
 
 	<body>
 		<div class="nav">
 			<h1>Settings</h1>
-			<button id="button-save"><a href="#"></button>
-			<button id="button-back"><a href="#"></button>
+			<button id="button-save"></button>
+			<button id="button-back"></button>
 		</div>
 
 		<h2>Reminders</h2>
+
+			<div class="calendar">
+		    <div>
+				<center>
+		      <input type="checkbox" checked>
+				</center>
+		    </div>
+		    <script src="bootstrap-switch-master/docs/js/jquery.min.js"></script>
+		    <script src="bootstrap-switch-master/docs/js/bootstrap.min.js"></script>
+		    <script src="bootstrap-switch-master/dist/js/bootstrap-switch.js"></script>
+		    <script>
+		    $(function(argument) {
+		      $('[type="checkbox"]').bootstrapSwitch();
+		    })
+		    </script>
+			</div>
+
 		<h2>Notifications</h2>
+
+		<div class="calendar">
+			<div>
+			<center>
+				<input type="checkbox" checked>
+			</center>
+			</div>
+			<script src="bootstrap-switch-master/docs/js/jquery.min.js"></script>
+			<script src="bootstrap-switch-master/docs/js/bootstrap.min.js"></script>
+			<script src="bootstrap-switch-master/dist/js/bootstrap-switch.js"></script>
+			<script>
+			$(function(argument) {
+				$('[type="checkbox"]').bootstrapSwitch();
+			})
+			</script>
+		</div>
+
 		<h2>Sync</h2>
 
 		<div class="calendar">
 			<div class="col-xs-6" style="font-size: 23px;">Exchange</div>
-  		<div class="col-xs-6"><button class="btn btn-default" style="background-color: #6abd45;">Connect</button></div>
+  		<div class="col-xs-6"><label class="myLabel"><input id="myfile" type="file" onchange="sync()" required/><span id="myspan">Connect</span></label></div>
 		</div>
 		<p></p>
 		<div class="calendar">
 			<div class="col-xs-6" style="font-size: 23px;">Facebook</div>
-  		<div class="col-xs-6"><button class="btn btn-default" style="background-color: #6abd45;">Connect</button></div>
+  		<div class="col-xs-6"><label class="myLabel"><input id="myfile" type="file" onchange="sync()" required/><span id="myspan">Connect</span></label></div>
 		</div>
 		<p></p>
 		<div class="calendar">
 			<div class="col-xs-6" style="font-size: 23px;">Google</div>
-  		<div class="col-xs-6"><button class="btn btn-default" style="background-color: #6abd45;">Connect</button></div>
+  		<div class="col-xs-6"><label class="myLabel"><input id="myfile" type="file" onchange="sync()" required/><span id="myspan">Connect</span></label></div>
 		</div>
 		<p></p>
 		<div class="calendar">
 			<div class="col-xs-6" style="font-size: 23px;">iCloud</div>
-  		<div class="col-xs-6"><button class="btn btn-default" style="background-color: #6abd45;">Connect</button></div>
+  		<div class="col-xs-6"><label class="myLabel"><input id="myfile" type="file" onchange="sync()" required/><span id="myspan">Connect</span></label></div>
 		</div>
 		<p></p>
 		<div class="calendar">
 			<div class="col-xs-6" style="font-size: 23px;">Moodle</div>
-  		<div class="col-xs-6"><button class="btn btn-default" style="background-color: #6abd45;">Connect</button></div>
+  		<div class="col-xs-6"><label class="myLabel"><input id="myfile" type="file" onchange="sync()" required/><span id="myspan">Connect</span></label></div>
 		</div>
 
 		<nav class="navbar navbar-inverse navbar-fixed-bottom">

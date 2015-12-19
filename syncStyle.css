@@ -19,6 +19,7 @@ h1 {
 
 h2 {
 	text-align: center;
+	text-decoration: none;
 	border-bottom: 7px solid #000000;
 }
 
@@ -75,3 +76,24 @@ h2 {
  	padding-left: 10%;
  	padding-right: 10%;
  }
+
+ label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: none;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: #6abd45;
+    display: inline-block;
+}
+.myLabel:hover {
+    background: #6abd45;
+}
+.myLabel:active {
+    background: #6abd45;
+}
