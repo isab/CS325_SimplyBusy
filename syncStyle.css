@@ -1,0 +1,77 @@
+.calendar{
+	width: 100%;
+	height: 50px;
+	border-bottom: 3px dashed #000000;
+}
+
+.nav {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 0;
+	text-align:center;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	padding-bottom: 10px;
+}
+
+h2 {
+	text-align: center;
+	border-bottom: 7px solid #000000;
+}
+
+/* Navigation buttons */
+
+ #button-save {
+ 	 background-image: url('save.png');
+ 	 background-color: #ffffff;
+     line-height: 12px;
+     width: 74px;
+     height: 32px;
+     font-size: 8pt;
+     margin-top: 1%;
+     margin-right: 4%;
+     border: 0;
+     position:absolute;
+     top:0;
+     right:0;
+ }
+
+ #button-back {
+ 	 background-image: url('backarrow.png');
+ 	 background-color: #ffffff;
+ 	 line-height: 12px;
+     width: 18px;
+     height: 32px;
+     font-size: 8pt;
+     margin-top: 1%;
+     margin-left: 4%;
+     border: 0;
+     position:absolute;
+     top:0;
+     left:0;
+ }
+
+ /* Botton Navigation styling */
+  .container-fluid {
+  	background-color: #ffffff;
+  	border: 0;
+  }
+
+ #nav_button {
+ 	width: 64px;
+ 	height: 64px;
+ 	display: inline-block;
+ 	float: left;
+ 	margin-left: 15%;
+
+ }
+
+ .navbar-inverse {
+ 	background-color: #ffffff;
+ 	border: none;
+ 	padding-left: 10%;
+ 	padding-right: 10%;
+ }
