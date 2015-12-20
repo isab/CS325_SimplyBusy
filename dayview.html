@@ -142,7 +142,7 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
-<!-- Partitions the clock. -->
+<!-- Partitions the clock. Current only works for times that have 0 minutes-->
 function partition(start, end, ctx, pos, length, width, color) {
     ctx.strokeStyle=(color);
     ctx.rotate(pos*start*30);
